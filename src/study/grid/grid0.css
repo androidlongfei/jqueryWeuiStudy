@@ -1,0 +1,59 @@
+
+.demos-header{
+  padding: 0 30px;
+  /*background-color: #ffeedd;*/
+}
+
+.demos-title{
+  text-align: center;
+  color: #3cc51f;
+  margin: 0 15%;
+  font-weight: 400;
+}
+
+.weui-grids{
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #D9D9D9;
+  border-left: 1px solid #D9D9D9;
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.33333333%;
+  /*width: 25%;*/
+  box-sizing: border-box;
+  border-right: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  text-decoration:none
+}
+
+.weui-grid__icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  /*padding: 5px;*/
+  /*background: blue;*/
+  /*overflow: hidden;*/
+}
+
+.weui-grid__icon img {
+  /*display: block;*/
+  width: 100%;
+  height: 100%;
+}
+
+.weui-grid__label {
+  /*background: #52ddd3;*/
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.weui-grid:active {
+  background-color: #ECECEC;
+}

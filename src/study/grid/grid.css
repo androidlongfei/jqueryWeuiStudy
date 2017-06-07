@@ -53,6 +53,7 @@
   width: 33.33333333%;
   /*width: 25%;*/
   box-sizing: border-box;
+  text-decoration:none
 }
 
 .weui-grid:before {
@@ -83,4 +84,32 @@
           transform-origin: 0 100%;
   -webkit-transform: scaleY(0.5);
           transform: scaleY(0.5);
+}
+
+.weui-grid__icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  /*padding: 5px;*/
+  /*background: blue;*/
+  /*overflow: hidden;*/
+}
+
+.weui-grid__icon img {
+  /*display: block;*/
+  width: 100%;
+  height: 100%;
+}
+
+.weui-grid__label {
+  /*background: #52ddd3;*/
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.weui-grid:active {
+  background-color: #ECECEC;
 }

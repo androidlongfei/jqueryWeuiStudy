@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box-sizing</title>
+    <style type="text/css">
+        .deffaut {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+
+        .content-box {
+            /* padding和border不计算入width之内,
+          如 width = 100,borer = 5,padding = 20
+          那么 content = width = 100,
+          且盒子的总宽度 = width + borer + padding = 100 + 5*2 + 20*2 = 150
+          */
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #E6A43F;
+            background: blue;
+        }
+
+        .padding-box {
+            /* padding计算入width之内,
+            如 width = 100,borer = 5,padding = 20
+            那么 content = width - padding = 100 - 20 * 2 = 60,
+            且盒子的总宽度 = width + borer = 100 + 5*2  = 110
+            盒子的宽度=100+20*2 */
+            box-sizing: padding-box;
+            -moz-box-sizing: padding-box;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #186645;
+            background: red;
+        }
+
+        .border-box {
+            /* padding和border计算入width之内,
+          如 width = 100,borer = 5,padding = 20
+          那么 content = 100 - 5*2 - 20*2 = 50,
+          且盒子的总宽度 = width = 100
+          */
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #3DA3EF;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="deffaut">
+
+    </div>
+
+    <div class="content-box">
+
+    </div>
+
+    <div class="padding-box"></div>
+
+    <div class="border-box"></div>
+
+</body>
+
+</html>
