@@ -1,0 +1,25 @@
+# 知识点
+
+## hidden 使用
+
+- [文档说明](http://blog.sina.com.cn/s/blog_60b35e830100uw3z.html)
+
+## text-align使用
+
+- [文档说明](http://www.w3school.com.cn/cssref/pr_text_text-align.asp)
+
+text-align 属性规定元素中的文本的`水平对齐方式`。
+
+该属性通过指定行框与哪个点对齐，从而设置`块级元素`内文本的水平对齐方式。
+
+常用取值有:left,right,center
+
+## font-weight使用
+
+- [文档说明](http://www.w3school.com.cn/cssref/pr_font_weight.asp)
+
+font-weight 属性设置文本的粗细
+
+该属性用于设置显示元素的文本中所用的字体加粗。数字值 400 相当于 关键字 normal，700 等价于 bold
+
+常用取值有:normal,bold
