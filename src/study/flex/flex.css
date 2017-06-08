@@ -1,0 +1,22 @@
+.demos-header{
+    padding: 0 30px;
+    /*background-color: #ffeedd;*/
+}
+
+.demos-title{
+    text-align: center;
+    color: #3cc51f;
+    margin: 0 15%;
+    font-weight: 400;
+}
+
+.weui-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.weui-flex__item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
