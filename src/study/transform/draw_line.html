@@ -2,153 +2,98 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <style media="screen">
-    body {
-      background-color: black;
-    }
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        .content {
+            margin-top: 20px;
+        }
 
-    .drawLine {
-      position: relative;
-      background-color: white;
-      width: 200px;
-      height: 200px;
-      margin-top: 10px;
-    }
-    /*
-    *使用absolute在容器的四个方向画盒子
-    *1.顶部(left=0,right=0,top=0)
-    *2.底部(left=0,right=0,bottom=0)
-    *3.左边(top=0,bottom=0,left=0)
-    *4.右边(top=0,bottom=0,right=0)
-    */
-    /**
-    *使用transform-origin和transform控制盒子额宽度和高度
-    *1.{transform-origin: 0 0;transform: scaleY(0.5)}以圆点为基点对盒子高度进行缩放
-    *2.{transform-origin: 0 0;transform: scaleX(0.5)}以圆点为基点对盒子宽度进行缩放
-    */
+        .cells {
+            position: relative;
+            background-color: #868;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+        }
 
-    .line_top {
-      /*宽度撑满屏幕(position=absolute,left=0,top=0;right=0)
-      高度缩小为原来的一半（包括content，padding，border）
-      */
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      color: red;
-      border: 1px solid red;
-      transform-origin: 0 0;
-      transform: scaleY(0.5);
-    }
-
-    .line_bottom {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      color: red;
-      border: 1px solid red;
-      transform-origin: 0 100%;
-      transform: scaleY(0.5);
-    }
-
-    .line_left {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      color: red;
-      border: 1px solid red;
-      transform-origin: 0 0;
-      transform: scaleX(0.5);
-    }
-
-    .line_right {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      color: red;
-      border: 1px solid red;
-      transform-origin: 100% 0;
-      transform: scaleX(0.5);
-    }
-  </style>
-  <style media="screen">
-    .content {
-      margin-top: 20px;
-    }
-
-    .cells {
-      position: relative;
-      background-color: white;
-      width: 200px;
-      height: 200px;
-      margin-top: 10px;
-    }
-
-    .cells::before {
-      content: " ";
-      border: 1px solid blue;
-      /*border-top: 1px solid blue;*/
-      height: 50px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      /*transform-origin: 0 0;
+        .cells::before {
+            content: " ";
+            border: 1px solid blue;
+            /*border-top: 1px solid blue;*/
+            height: 50px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            /*transform-origin: 0 0;
       transform: scaleY(0.5);*/
-    }
+        }
 
-    .cells::after {
-      content: " ";
-      border: 1px solid red;
-      /*border-bottom: 1px solid red;*/
-      color: red;
-      height: 50px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      /*transform-origin: 0 100%;
+        .cells::after {
+            content: " ";
+            border: 1px solid red;
+            /*border-bottom: 1px solid red;*/
+            color: red;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*transform-origin: 0 100%;
       transform: scaleY(0.5);*/
-    }
-  </style>
+        }
+    </style>
+
+    <style>
+        .cells1 {
+            position: relative;
+            /*background-color: #868;*/
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+        }
+
+        .cells1::before {
+            content: " ";
+            border-top: 1px solid blue;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            transform-origin: 0 0;
+            transform: scaleY(0.5);
+        }
+
+        .cells1::after {
+            content: " ";
+            border-bottom: 1px solid red;
+            color: red;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform-origin: 0 100%;
+            transform: scaleY(0.5);
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="drawLine">
-    <div class="line_top">
-      <p>顶部</p>
+    <div class="content">
+        <div class="cells">
+            <div>hello</div>
+        </div>
     </div>
-  </div>
 
-  <div class="drawLine">
-    <div class="line_bottom">
-      <p>底部</p>
+    <div class="content">
+        <div class="cells1">
+            <div>hello</div>
+        </div>
     </div>
-  </div>
-
-  <div class="drawLine">
-    <div class="line_left">
-      <p>左部</p>
-    </div>
-  </div>
-
-  <div class="drawLine">
-    <div class="line_right">
-      <p>右部</p>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="cells">
-      <div>hello</div>
-    </div>
-  </div>
 </body>
 
 </html>
