@@ -1,0 +1,55 @@
+.demos-content-padded {
+  padding: 15px;
+}
+
+a {
+  margin: 5px;
+}
+
+.weui-btn {
+  display: block;
+  position: relative;
+  /*border: 1px solid rgb(34, 71, 83);*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+
+.weui-btn::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+}
+
+.weui-btn_primary {
+  background-color: #1AAD19;
+}
+
+.weui-btn_disabled {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.weui-btn:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #179B16;
+}
+
+.weui-btn_warn {
+  background-color: #E64340;
+}
+
+.weui-btn_warn:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #CE3C39;
+}

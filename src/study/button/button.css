@@ -1,0 +1,117 @@
+.demos-content-padded {
+  padding: 15px;
+}
+
+a {
+  margin: 5px;
+}
+
+.weui-btn {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  line-height: 2.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.weui-btn:after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(0.5);
+  /*transform: scale(1);*/
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.weui-btn_disabled {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/*primary*/
+
+.weui-btn_primary {
+  background-color: #1AAD19;
+}
+
+.weui-btn_primary:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #179B16;
+}
+
+.weui-btn_primary:not(.weui-btn_disabled):visited {
+  color: #FFFFFF;
+}
+
+
+/* wran */
+
+.weui-btn_warn {
+  background-color: #E64340;
+}
+
+.weui-btn_warn:not(.weui-btn_disabled):visited {
+  color: #FFFFFF;
+}
+
+.weui-btn_warn:not(.weui-btn_disabled):active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #CE3C39;
+}
+
+.weui-btn_loading .weui-loading {
+  margin: -0.2em 0.34em 0 0;
+}
+
+.weui-btn_loading.weui-btn_primary, .weui-btn_loading.weui-btn_warn {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* 扁平 */
+
+.weui-btn_plain-default {
+  color: #353535;
+  border: 1px solid #353535;
+}
+
+.weui-btn_plain-default:not(.weui-btn_plain-disabled):active {
+  color: rgba(53, 53, 53, 0.6);
+  border-color: rgba(53, 53, 53, 0.6);
+}
+
+.weui-btn_plain-default:after {
+  border-width: 0px;
+}
+
+.weui-btn_plain-disabled {
+  color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/*mini*/
+
+.weui-btn_mini {
+  display: inline-block;
+  padding: 0 1.32em;
+  line-height: 2.3;
+  font-size: 13px;
+}

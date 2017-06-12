@@ -106,3 +106,25 @@
     flex-basis: auto;
 }
 ```
+
+## 兼容性写法
+
+flex 容器
+
+```
+.weui-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+```
+
+flex 项目
+
+```
+.weui-flex__item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+```
