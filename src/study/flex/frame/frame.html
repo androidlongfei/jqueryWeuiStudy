@@ -13,17 +13,52 @@
 
     .header {
       background: blue;
-      flex: 1;
+      flex: 15%;
     }
 
     .main {
       background-color: #CCCCCC;
+      flex: 70%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .left {
       flex: 20%;
+      background: yellow;
+      order: -1;
+    }
+
+    .center {
+      flex: 60%;
+      order: 1
+    }
+
+    .right {
+      flex: 20%;
+      order: 2;
+      background: #787;
     }
 
     .footer {
-      flex: 1;
+      flex: 15%;
       background-color: #EE11EE;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex: 60%;
+        flex-direction: column;
+      }
+      .left {
+        flex: 20%;
+      }
+      .center {
+        flex: 60%;
+      }
+      .right {
+        flex: 20%;
+      }
     }
   </style>
 </head>
@@ -32,14 +67,23 @@
 
   <div class="content">
     <header class="header">
-
+      header
     </header>
 
     <div class="main">
-      dd
+      <div class="left">
+        left
+      </div>
+      <div class="center">
+        center
+      </div>
+      <div class="right">
+        right
+      </div>
     </div>
 
     <footer class="footer">
+      footer
     </footer>
 
   </div>

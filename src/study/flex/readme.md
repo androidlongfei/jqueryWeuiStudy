@@ -39,9 +39,9 @@
   flex:0 1 auto
 }
 .item {
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: 0%;
+    flex-basis: auto;
 }
 ```
 
