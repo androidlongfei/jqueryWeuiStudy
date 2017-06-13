@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Expandable elements</title>
+  <style>
+    #expand-btn {
+      margin: 0 3px;
+      display: inline-block;
+      font: 12px / 13px "Lucida Grande", sans-serif;
+      text-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+      padding: 3px 6px;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      background-color: #969696;
+      cursor: default;
+      border-radius: 3px;
+      box-shadow: rgba(255, 255, 255, 0.4) 0 1px, inset 0 20px 20px -10px white;
+    }
+
+    #isexpanded:checked~* tr.expandable {
+      display: table-row;
+      background: #cccccc;
+    }
+    /**
+ * [~的使用]
+ * 将input标签后面含有expandable的p元素选中
+ */
+
+    #isexpanded:checked~p.expandable {
+      display: block;
+      background: #cccccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="checkbox" id="isexpanded" value="male" />male
+
+  <h1>Expandable elements</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Column #1</th>
+        <th>Column #2</th>
+        <th>Column #3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="expandable">
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+      </tr>
+      <tr>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+      </tr>
+      <tr>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+      </tr>
+      <tr class="expandable">
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+      </tr>
+      <tr class="expandable">
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+        <td>[cell text]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>[some sample text]</p>
+  <p><label for="isexpanded" id="expand-btn">Show hidden elements</label></p>
+  <p class="expandable">[another sample text]</p>
+  <p>[some sample text]</p>
+</body>
+
+</html>
