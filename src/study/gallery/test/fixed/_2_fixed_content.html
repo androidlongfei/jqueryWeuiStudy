@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    html {
+      height: 100%;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      background: #456;
+      height: 100%;
+    }
+
+    .head {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: blue;
+      min-height: 50px;
+    }
+
+    .main {
+      background-color: #456;
+      height: 100%;
+      color: red;
+      /*margin-top: 50px;
+      margin-bottom: 50px;*/
+      padding-top: 50px;
+      padding-bottom: 50px;
+      box-sizing: border-box;
+    }
+
+    .foot {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: green;
+      min-height: 50px;
+    }
+  </style>
+  <style media="screen">
+    .flex {
+      display: flex;
+    }
+
+    .left {
+      flex: 15%;
+      height: 100%;
+      background: #666;
+    }
+
+    .content {
+      flex: 65%;
+    }
+
+    .right {
+      flex: 20%;
+      background-color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="head">
+    i am top
+  </div>
+
+  <div class="main flex">
+    <div class="left">
+      i am left
+    </div>
+    <div class="content">
+      i am content
+    </div>
+    <div class="right">
+      i am right
+    </div>
+  </div>
+
+  <div class="foot">
+    i am foot
+  </div>
+
+</body>
+
+</html>

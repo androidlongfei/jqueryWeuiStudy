@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<style media="screen">
+  .content {
+    height: 500px;
+    border: 1px solid red;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .slider {
+    height: 2px;
+    background-color: #456;
+    position: relative;
+    margin: 40px 20px;
+  }
+
+  .slider_choice_line {
+    height: 2px;
+    background-color: red;
+    /*width: 10%;*/
+  }
+
+  .slider_choice_box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*left: 10%;*/
+  }
+
+  .box_value {
+    color: white;
+  }
+
+  .slider_box {
+    display: flex;
+    /*border: 1px solid blue;*/
+    align-items: center;
+  }
+
+  .slider_box .slider {
+    flex: 1;
+  }
+
+  .slider_value {
+    /*flex: 0;*/
+  }
+
+  .slider_value span {
+    /*border: 1px solid red;*/
+    margin-right: 20px;
+  }
+</style>
+
+<body>
+
+  <div class="content">
+    <div class="slider">
+      <div class="slider_choice_line" style="width:10%;"></div>
+      <div class="slider_choice_box" style="left:10%;">10</div>
+    </div>
+
+    <div class="slider">
+      <div class="slider_choice_line" style="width:50%;"></div>
+      <div class="slider_choice_box" style="left:50%;">50</div>
+    </div>
+
+    <div class="slider_box">
+      <div class="slider">
+        <div class="slider_choice_line" style="width:50%;"></div>
+        <div class="slider_choice_box" style="left:50%;">50</div>
+      </div>
+      <div class="slider_value">
+        <span>50</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

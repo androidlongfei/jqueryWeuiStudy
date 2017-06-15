@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>slider</title>
+  <link rel="stylesheet" href="slider.css">
+  <style>
+    .swiper-container {
+      width: 100%;
+    }
+
+    .swiper-container img {
+      display: block;
+      width: 100%;
+    }
+
+    .demos-header {
+      padding: 0 30px;
+      /*background-color: #ffeedd;*/
+    }
+
+    .demos-title {
+      text-align: center;
+      color: #3cc51f;
+      margin: 0 15%;
+      font-weight: 400;
+    }
+  </style>
+</head>
+
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Slider</h1>
+  </header>
+  <div class='demos-content-padded'>
+    <div class="weui-slider" id='slider1'>
+      <div class="weui-slider__inner">
+        <div style="width: 0;" class="weui-slider__track"></div>
+        <div style="left: 0;" class="weui-slider__handler"></div>
+      </div>
+    </div>
+    <br>
+    <div class="weui-slider-box" id='slider2'>
+      <div class="weui-slider">
+        <div id="sliderInner" class="weui-slider__inner">
+          <div id="sliderTrack" style="width: 75%;" class="weui-slider__track"></div>
+          <div id="sliderHandler" style="left: 75%;" class="weui-slider__handler"></div>
+        </div>
+      </div>
+      <div id="sliderValue" class="weui-slider-box__value">75</div>
+    </div>
+  </div>
+</body>
+
+</html>

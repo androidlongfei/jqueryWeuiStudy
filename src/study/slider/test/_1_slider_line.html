@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<style media="screen">
+  .content {
+    height: 500px;
+    border: 1px solid red;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .slider {
+    height: 2px;
+    background-color: #456;
+    position: relative;
+    margin: 50px;
+  }
+
+  .slider_choice_line {
+    height: 2px;
+    background-color: red;
+    /*width: 10%;*/
+  }
+
+  .slider_choice_box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    /*left: 10%;*/
+  }
+</style>
+
+<body>
+
+  <div class="content">
+    <div class="slider">
+      <div class="slider_choice_line" style="width:10%;"></div>
+      <div class="slider_choice_box" style="left:10%;"></div>
+    </div>
+
+    <div class="slider">
+      <div class="slider_choice_line" style="width:50%;"></div>
+      <div class="slider_choice_box" style="left:50%;"></div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
