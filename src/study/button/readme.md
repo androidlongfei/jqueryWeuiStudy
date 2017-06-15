@@ -42,6 +42,10 @@ div p:not(:first-child):not(:last-child){
 ## line-height
 
 - [line-height](http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/)
+- [demo](./test/line_height.html)
+- [mult](./test/mult_line_center.html)
+
+css中起高度作用的是height以及line-height！如果一个标签没有定义height属性(包括百分比高度)，那么其最终表现的高度一定是由line-height起作用.
 
 ## text-decoration
 
