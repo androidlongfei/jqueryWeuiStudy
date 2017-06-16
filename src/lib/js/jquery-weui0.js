@@ -24,7 +24,7 @@
     if (callback) {
       for (i = 0; i < events.length; i++) {
         dom.on(events[i], fireCallBack);
-      }
+      }$.modal
     }
     return this;
   };
