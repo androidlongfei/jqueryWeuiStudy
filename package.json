@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery-weui": "^1.0.1"
+    "jquery-weui": "^1.0.1",
+    "lodash": "^4.17.4"
   }
 }
