@@ -50,3 +50,20 @@ function jqueryPost(url, data, successCallback, errorCallback) {
 function jqueryPostObjParam(requestObj) {
   jqueryPost(requestObj.url, requestObj.data, requestObj.successCallback, requestObj.errorCallback);
 }
+
+/**
+ * [pagingQueryData 分页查询]
+ * @param  {[string]} url     [url地址]
+ * @param  {[int]} start [起始位置]
+ * @param  {[int]} count   [每页查询的条目]
+ * @param  {[function]} successCallback   [查询成功的回调函数]
+ * @param  {[function]} failedCallback   [查询失败的回调函数]
+ * @return {[type]}         [description]
+ */
+function pagingQueryData(url, start, count, successCallback, failedCallback) {
+  var data = {
+    start: start,
+    count: count
+  };
+  jqueryPost(url, data, successCallback, failedCallback);
+}

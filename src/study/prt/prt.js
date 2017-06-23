@@ -1,5 +1,6 @@
 var HOST = "http://10.4.52.32:8000";
-var NUMBER = 10; // 默认每次加载10条
+var COUNT = 15; // 默认每次加载10条
+var loadStatus = 0; // 0:可加载 1:加载中 2:所有数据加载完成
 
 /**
  * [解决ios点击事件延迟300ms]
@@ -9,31 +10,92 @@ $(function() {
   FastClick.attach(document.body);
 });
 
+initLoadMore(); //初始化加载更多
+refresh(); // 初次加载数据
+
 $(document.body).pullToRefresh().on("pull-to-refresh", function() {
-  setTimeout(function() {
-    refresh();
-  }, 1000);
+  // 触发下拉刷新
+  refresh();
 });
+
+$(document.body).infinite().on("infinite", function() {
+  // 触发加载更多
+  if (loadStatus === 0) {
+    loadMore();
+  }
+});
+
+function loadMore() {
+  loadStatus = 1;
+  $('.weui-loadmore').show();
+  var start = $("#list > a").size();
+  console.log(typeof start);
+  console.log(typeof COUNT);
+  var url = HOST + '/paging';
+  console.log('more start', start);
+  pagingQueryData(url, start, COUNT, loadMoreSuccess, loadMoreFailed);
+}
+
+function loadMoreSuccess(data) {
+  console.log('加载更多获取数据成功', data);
+  var elments = assemblyElement(data.testData);
+  var total = data.total;
+  $("#list").append(elments);
+  loading = false;
+  var currentTotal = $("#list > a").size();
+  console.log('currentTotal', currentTotal);
+  console.log('total', total);
+  if (currentTotal == total) {
+    //全部加载完毕
+    loadStatus = 2;
+  } else {
+    loadStatus = 0;
+  }
+  $('.weui-loadmore').hide();
+}
+
+function loadMoreFailed(data) {
+  loadStatus = 0;
+  $('.weui-loadmore').hide();
+}
+
+function initLoadMore() {
+  //初始化加载更多
+  loadStatus = 0;
+  $(document.body).infinite(50);
+  $('.weui-loadmore').hide();
+}
+
 
 /**
  * [refresh 下拉刷新]
  * @return {[type]} [description]
  */
 function refresh() {
-  var current = $("#list > a").size();
+  // var start = $("#list > a").size();
+  var start = 0;
   var url = HOST + '/paging';
-  console.log('current', current);
-  pagingQueryData(url, current, NUMBER, refreshSuccess, refreshFailed);
+  console.log('refresh start', start);
+  pagingQueryData(url, start, COUNT, refreshSuccess, refreshFailed);
 }
 
 function refreshSuccess(data) {
-  console.log('获取数据成功', data);
+  console.log('下拉刷新获取数据成功', data);
   var elments = assemblyElement(data.testData);
   var total = data.total;
   $("#list").empty();
   $("#list").append(elments);
   $("#time").text(moment().format('YYYY-MM-DD HH:mm:ss'));
   $(document.body).pullToRefreshDone();
+
+  // 初始化 加载更多
+  initLoadMore();
+  var currentTotal = $("#list > a").size();
+  if (currentTotal == total) {
+    //全部加载完毕 , 不显示加载过多
+    loadStatus = 2;
+    $('.weui-loadmore').hide();
+  }
 }
 
 function refreshFailed(error) {
@@ -57,21 +119,4 @@ function getItem(itemData) {
     '</div>' +
     '</a>';
   return content;
-}
-
-/**
- * [pagingQueryData 分页查询]
- * @param  {[string]} url     [url地址]
- * @param  {[int]} current [当前位置]
- * @param  {[int]} number   [每页查询的条目]
- * @param  {[function]} successCallback   [查询成功的回调函数]
- * @param  {[function]} failedCallback   [查询失败的回调函数]
- * @return {[type]}         [description]
- */
-function pagingQueryData(url, current, number, successCallback, failedCallback) {
-  var data = {
-    current: current,
-    number: number
-  };
-  jqueryPost(url, data, successCallback, failedCallback);
 }
